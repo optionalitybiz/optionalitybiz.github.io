@@ -1,0 +1,18 @@
+.root {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #ffffff;
+}
+.divBrand {
+  margin: 1em;
+}
+.spanBrand {
+  display: flex;
+}
+.imgBrand {
+  height: 5em;
+  width: 15em;
+}
+.divMain {
+  display: inline-block;
+}
