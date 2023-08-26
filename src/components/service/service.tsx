@@ -2,22 +2,23 @@ import classNames from 'classnames';
 import styles from './service.module.scss';
 import React, { useState } from 'react';
 
-export interface ServiceProps {
+export interface service {
     className?: string;
+    id: number;
+    title: string;
+    description: string;
+    bulletOne: string;
+    bulletTwo: string;
+    bulletThree: string;
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
-export const Service = ({ className, service }: ServiceProps) => {
+
+export const Service = ({ className, id, title, description, bulletOne, bulletThree, bulletTwo }: service) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
-
-    const { id, title, description, bulletOne, bulletTwo, bulletThree } = service;
 
     return (
         <div className={classNames(styles.root, className)}>

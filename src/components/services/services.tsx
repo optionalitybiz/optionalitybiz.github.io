@@ -1,16 +1,12 @@
 import classNames from 'classnames';
 import styles from './services.module.scss';
-import { Service } from '../service/service';
+import { Service, service } from '../service/service';
 
 export interface ServicesProps {
     className?: string;
-    services?: string[];
+    services: service[];
 }
 
-/**
- * This component was created using Codux's Default new component template.
- * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
- */
 
 export const Services = ({ className, services }: ServicesProps) => {
     return (
@@ -24,7 +20,15 @@ export const Services = ({ className, services }: ServicesProps) => {
             </div>
             {services.map((service) => (
                 <div>
-                    <Service key={service.id} service={service} />
+                    <Service 
+                        key={service.id}
+                        id={service.id}
+                        title={service.title} 
+                        description={service.description}
+                        bulletOne={service.bulletOne}
+                        bulletTwo={service.bulletTwo}
+                        bulletThree={service.bulletThree}
+                        />
                 </div>
             ))}
         </div>
