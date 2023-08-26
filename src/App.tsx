@@ -9,7 +9,7 @@ import { MainStatement } from './components/main-statement/main-statement';
 import { Services } from './components/services/services';
 import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     const [count, setCount] = useState(0);
@@ -60,7 +60,10 @@ function App() {
     return (
         <div className={styles.App}>
             <div />
-            <NavHeader />
+            <BrowserRouter>
+                <NavHeader />
+                   
+
             <Intro />
             <SpacerBlack />
             <MainStatement />
@@ -69,6 +72,7 @@ function App() {
             <Services services={services} />
             <Contact />
             <Footer />
+            </BrowserRouter>
         </div>
     );
 }
