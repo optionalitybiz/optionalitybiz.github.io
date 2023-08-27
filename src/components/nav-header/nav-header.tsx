@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import styles from './nav-header.module.scss';
 import png from '../../assets/logo.png';
 
+import { Link } from "react-router-dom";
+
 export interface NavHeaderProps {
     className?: string;
 }
@@ -19,16 +21,24 @@ export const NavHeader = ({ className }: NavHeaderProps) => {
                         <img src={png} alt="" className={styles.imgNavClass} />
                     </div>
                     <div className={styles.navSpanDivClass}>
+                    <Link to="/">
                         <a href="/" className={styles.navLinkClass}>
-                            Services
+                            Home
                         </a>
-                        <a href="/" className={styles.navLinkClass}>
-                            Projects
+                        </Link>
+                        <Link to="/projects">
+                        <a href="/projects" className={styles.navLinkClass}>
+                            Our Work
                         </a>
+                        </Link>
+                        <Link to="/about">
                         <a href="/" className={styles.navLinkClass}>
                             About
                         </a>
+                        </Link>
+                        <Link to="/contact">
                         <button className={styles.navButtonClass}>Contact Us</button>
+                        </Link>
                     </div>
                 </span>
             </div>

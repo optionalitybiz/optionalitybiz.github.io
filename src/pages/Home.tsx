@@ -1,0 +1,77 @@
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import styles from './Home.module.scss';
+import { Intro } from '../components/intro/intro';
+import { Spacer } from '../components/spacer/spacer';
+import { OurWork } from '../components/our-work/our-work';
+import { SpacerBlack } from '../components/spacer-black/spacer-black';
+import { MainStatement } from '../components/main-statement/main-statement';
+import { Services } from '../components/services/services';
+import { Contact } from '../components/contact/contact';
+import { Footer } from '../components/footer/footer';
+
+
+function Home() {
+    const [count, setCount] = useState(0);
+
+    const services = [
+        {
+            id: 1,
+            title: 'Web Design',
+            description: 'des 1',
+            bulletOne: 'Website design and management',
+            bulletTwo: 'E-Commerce front and back-end support',
+            bulletThree: 'On-call tech support',
+        },
+        {
+            id: 2,
+            title: 'Social Media Marketing',
+            description: 'des 2',
+            bulletOne: '',
+            bulletTwo: '',
+            bulletThree: '',
+        },
+        {
+            id: 3,
+            title: 'Technology',
+            description: 'des3',
+            bulletOne: 'Hardware & Software Installation',
+            bulletTwo: 'On-Call Tech Support',
+            bulletThree: 'Equipment ',
+        },
+        {
+            id: 4,
+            title: 'Content Creation',
+            description: 'des 4',
+            bulletOne: '',
+            bulletTwo: 'Product and business branding',
+            bulletThree: 'Photography, videography and content creation',
+        },
+        {
+            id: 5,
+            title: 'Consulting',
+            description: 'des5',
+            bulletOne: 'Business Plans (Reduction and Expansion planning, Shifting Markets)',
+            bulletTwo: 'Employee Compensation Strategies & Business Analytics',
+            bulletThree: '',
+        },
+    ];
+
+    return (
+        <div className={styles.App}>
+            <div />          
+            
+            <Intro />
+            <SpacerBlack />
+            <MainStatement />
+            <Spacer />
+            <OurWork />
+            <Services services={services} />
+            <Contact />
+            <Footer />
+        </div>
+    );
+}
+
+export default Home;

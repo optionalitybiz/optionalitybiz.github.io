@@ -2,6 +2,8 @@ import classNames from 'classnames';
 import styles from './contact.module.scss';
 import React, {useState }from 'react';
 
+import { Link } from "react-router-dom";
+
 
 export interface ContactProps {
     className?: string;
@@ -24,7 +26,9 @@ export const Contact = ({ className }: ContactProps) => {
             <div className={styles.divContact}>
                 <h3 className={styles.h3Contact}>Partner With Us!</h3>
                 <h1 className={styles.h1Contact}>Let us suit your Businesses needs.</h1>
+                <Link to="/contact">    
                 <button className={styles.divButton} onClick={toggleEmail}>Contact Us</button>
+                </Link>
                 {showEmail && <p className={styles.email}>Email: contact@optionality.biz </p>}
             </div>
         </div>
