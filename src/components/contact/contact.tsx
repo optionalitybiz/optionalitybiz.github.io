@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './contact.module.scss';
 import React, {useState }from 'react';
-import Reveal from 'react-reveal/Reveal';
+import  Reveal  from 'react-reveal';
 
 
 import { Link } from "react-router-dom";

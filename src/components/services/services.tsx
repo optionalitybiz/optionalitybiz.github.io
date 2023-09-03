@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import styles from './services.module.scss';
 import { Service, service } from '../service/service';
+
 import Fade from 'react-reveal/Fade';
 
 export interface ServicesProps {
