@@ -17,16 +17,19 @@
   text-align: center;
   padding-top: 1em;
   font-size: 3em;
+  text-align: left;
 }
 .h1Contact {
   color: #000000;
-  text-align: center;
+  text-align: left;
   font-size: 2em;
   padding-bottom: 0.3em;
+  width: 20em;
 }
 .divMainText {
 }
 .divButton {
+  display: flex;
   text-align: center;
   padding-top: 0.6em;
 }

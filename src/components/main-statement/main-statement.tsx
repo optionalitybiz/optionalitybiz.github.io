@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import styles from './main-statement.module.scss';
+import Fade from 'react-reveal/Fade';
 
 export interface MainStatementProps {
     className?: string;
@@ -12,6 +13,7 @@ export interface MainStatementProps {
 export const MainStatement = ({ className }: MainStatementProps) => {
     return (
         <div className={classNames(styles.root, className)}>
+             <Fade bottom cascade>
             <div className={styles.divStatement}>
                 <p className={styles.pStatement}>We </p>  
                 <p className={styles.pStatement}>believe </p>
@@ -57,6 +59,7 @@ export const MainStatement = ({ className }: MainStatementProps) => {
                 <p className={styles.pStatement}>your </p>
                 <p className={styles.pStatement}>business. </p>
             </div>
+            </Fade>
         </div>
     );
 };

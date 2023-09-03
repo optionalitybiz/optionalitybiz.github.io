@@ -5,6 +5,7 @@ import { WorkCardTwo } from '../work-card-two/work-card-two';
 import { WorkCardThree } from '../work-card-three/work-card-three';
 import { WorkCardFour } from '../work-card-four/work-card-four';
 import { WorkCardFive } from '../work-card-five/work-card-five';
+import Slide from 'react-reveal/Slide';
 
 export interface OurWorkProps {
     className?: string;
@@ -18,11 +19,14 @@ export interface OurWorkProps {
 export const OurWork = ({ className }: OurWorkProps) => {
     return (
         <div className={classNames(styles.root, className)}>
+            
             <div className={styles.mainDivOurWork}>
                 <div className={styles.divOW}>
+                <Slide bottom cascade>
                     <h1 className={styles.h1OurWork}>
                         Web Design / Social Media Marketing / Tech / Content Creation / Consulting
                     </h1>
+                    </Slide>
                 </div>
                 <div>
                     <span className={styles.spanClassOurWork}>

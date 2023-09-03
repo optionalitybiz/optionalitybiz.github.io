@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import styles from './work-card-four.module.scss';
 import png from '../../assets/csInsta.png';
+import Fade from 'react-reveal/Fade';
 
 export interface WorkCardFourProps {
     className?: string;
@@ -13,11 +14,13 @@ export interface WorkCardFourProps {
 export const WorkCardFour = ({ className }: WorkCardFourProps) => {
     return (
         <div className={classNames(styles.root, className)}>
+            <Fade bottom>
             <div className={styles.divCardFour}>
                 <img src={png} alt="" className={styles.imgCardFour} />
                 <h3 className={styles.h3CardFour}>Social Media Marketing</h3>
                 <p className={styles.parCardFour}>Social Media Managemant and Marketing</p>
             </div>
+            </Fade>
         </div>
     );
 };

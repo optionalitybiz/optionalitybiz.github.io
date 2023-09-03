@@ -29,20 +29,20 @@
 }
 
 .ul {
-  font-size: 1em;
+  font-size: 1.2em;
   text-align: left;
 }
 
 .desc {
-  font-size: 1em;
-  text-align: left;
+  font-size: 1.2em;
+  width: 18em;
  
 }
 
 .divDesc {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: left;
+  
   margin-left: auto;
   text-align: left;
 }

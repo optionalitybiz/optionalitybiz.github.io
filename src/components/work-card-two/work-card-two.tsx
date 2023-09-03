@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import styles from './work-card-two.module.scss';
 import png from '../../assets/ssCase.png';
+import Fade from 'react-reveal/Fade';
 
 export interface WorkCardTwoProps {
     className?: string;
@@ -13,13 +14,17 @@ export interface WorkCardTwoProps {
 export const WorkCardTwo = ({ className }: WorkCardTwoProps) => {
     return (
         <div className={classNames(styles.root, className)}>
+            <Fade bottom>
             <div className={styles.divCardTwo}>
+          
                 <img src={png} alt="" className={styles.imgCardTwo} />
                 <h3 className={styles.h3CardTwo}>Consulting</h3>
                 <p className={styles.parCardOne}>
                     Menu Creation with Online Ordering Services Management
                 </p>
+             
             </div>
+            </Fade>
         </div>
     );
 };
