@@ -14,6 +14,16 @@ export interface FooterProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Footer = ({ className }: FooterProps) => {
+
+    (function(d){
+        var s = d.createElement("script");
+         s.setAttribute("data-position", "3");
+         s.setAttribute("data-color", "#242424");
+        s.setAttribute("data-account", "eRSoiwiIbG");
+        s.setAttribute("src", "https://cdn.userway.org/widget.js");
+        (d.body || d.head).appendChild(s);})(document)
+
+
     return (
         <div className={classNames(styles.root, className)}>
             <div>

@@ -3,6 +3,6 @@ import { Services } from '../../../components/services/services';
 
 export default createBoard({
     name: 'Services 1',
-    Board: () => <Services />,
+    Board: () => <Services services={[]} />,
     isSnippet: true,
 });

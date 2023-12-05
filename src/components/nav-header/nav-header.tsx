@@ -12,6 +12,7 @@ export interface NavHeaderProps {
  * This component was created using Codux's Default new component template.
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
+
 export const NavHeader = ({ className }: NavHeaderProps) => {
     return (
         <div className={styles.root}>

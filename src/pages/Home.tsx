@@ -56,12 +56,19 @@ function Home() {
             bulletTwo: 'Employee Compensation Strategies & Business Analytics',
             bulletThree: 'Competative market pricing',
         },
+        {
+            id: 6,
+            title: 'Accessibility',
+            description: 'We believe Accessibility is key for every website, no matter how small of a business.',
+            bulletOne: 'We strive to adhear to all WCAG 2.1 & 2.2 requiremnts.',
+            bulletTwo: 'Backed by up-to-date UserWay Accessibility widget.',
+            bulletThree: 'We provides Accessibility Statements and website reports.',
+        },
     ];
 
     return (
         <div className={styles.App}>
             <div />          
-            
             <Intro />
             <SpacerBlack />
             <MainStatement />

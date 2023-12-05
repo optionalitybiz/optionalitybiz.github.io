@@ -2,7 +2,7 @@
   display: inline-block;
   background-image: url('../../assets/logoOutline.png');
   background-position: 0%;
-  background-size: 80%;
+  background-size: 65%;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -13,6 +13,7 @@
   display: grid;
   justify-items: start;
   margin-right: 5em;
+  height: inherit;
 }
 .divOuterSpace {
   margin: 8em 20em 10em;
