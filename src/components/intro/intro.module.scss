@@ -1,38 +1,120 @@
 .root {
-  display: inline-block;
+  display: block;
   background-image: url('../../assets/logoOutline.png');
-  background-position: 0%;
   background-size: 65%;
   background-position: center;
   background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #242424;
 }
+
 .imgIntoClass {
-  width: 10em;
+  width: 12em;
+  margin-bottom: 1em;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
+
 .divIntro {
-  display: grid;
-  justify-items: start;
-  margin-right: 5em;
-  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
+  position: relative;
+  z-index: 2;
 }
+
 .divOuterSpace {
-  margin: 8em 20em 10em;
-  padding-top: 6em;
-  background-color: no-repeat padding-box border-box 50% / contain scroll;
- 
- 
- 
-  background-attachment: scroll;
-  background-origin: padding-box;
-  background-clip: border-box;
+  padding: 0 2em;
+  background: rgba(36, 36, 36, 0.85);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
+
 .h1MainIntroClass {
-  text-align: start;
-  font-size: 4em;
+  font-size: clamp(2em, 5vw, 4em);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: rgba(255, 255, 255, 0.87);
+  font-weight: 700;
+  text-align: left;
 }
+
 .h2SubtextInto {
-  text-align: start;
-  font-size: 1.4em;
+  font-size: clamp(1em, 2vw, 1.4em);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5em;
+  max-width: 800px;
 }
+
+.ctaContainer {
+  display: flex;
+  gap: 1.5em;
+  margin-top: 0.5em;
+}
+
 .buttonIntroClass {
+  display: inline-block;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  color: #242424;
+  background-color: #F9C307;
+  border: 2px solid #F9C307;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: transparent;
+    color: #F9C307;
+  }
+}
+
+.buttonSecondary {
+  display: inline-block;
+  padding: 1em 2em;
+  font-size: 1.2em;
+  color: #F9C307;
+  background-color: transparent;
+  border: 2px solid #F9C307;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #F9C307;
+    color: #242424;
+  }
+}
+
+@media (max-width: 768px) {
+  .divOuterSpace {
+    padding: 0 1em;
+  }
+
+  .divIntro {
+    padding: 0 1em;
+  }
+
+  .ctaContainer {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttonIntroClass,
+  .buttonSecondary {
+    width: 100%;
+    text-align: center;
+  }
 }

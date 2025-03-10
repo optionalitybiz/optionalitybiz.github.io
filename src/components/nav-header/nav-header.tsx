@@ -2,8 +2,6 @@ import classNames from 'classnames';
 import styles from './nav-header.module.scss';
 import png from '../../assets/logo.png';
 
-import { Link } from "react-router-dom";
-
 export interface NavHeaderProps {
     className?: string;
 }
@@ -14,32 +12,42 @@ export interface NavHeaderProps {
  */
 
 export const NavHeader = ({ className }: NavHeaderProps) => {
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const headerOffset = 0; // Remove header offset since it's not fixed anymore
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
-        <div className={styles.root}>
+        <div className={classNames(styles.root, className)}>
             <div className={styles.navDivMain}>
                 <span className={styles.spanNavClass}>
                     <div className={styles.navSpanLogoDivClass}>
-                        <img src={png} alt="" className={styles.imgNavClass} />
+                        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
+                            <img src={png} alt="Optionality Business Solutions" className={styles.imgNavClass} />
+                        </a>
                     </div>
                     <div className={styles.navSpanDivClass}>
-                    <Link to="/">
-                        <a href="/" className={styles.navLinkClass}>
-                            Home
-                        </a>
-                        </Link>
-                        <Link to="/projects">
-                        <a href="/projects" className={styles.navLinkClass}>
-                            Our Work
-                        </a>
-                        </Link>
-                        <Link to="/about">
-                        <a href="/" className={styles.navLinkClass}>
+                        <button onClick={() => scrollToSection('about')} className={styles.navLinkClass}>
                             About
-                        </a>
-                        </Link>
-                        <Link to="/contact">
-                        <button className={styles.navButtonClass}>Contact Us</button>
-                        </Link>
+                        </button>
+                        <button onClick={() => scrollToSection('our-work')} className={styles.navLinkClass}>
+                            Our Work
+                        </button>
+                        <button onClick={() => scrollToSection('services')} className={styles.navLinkClass}>
+                            Services
+                        </button>
+                        <button onClick={() => scrollToSection('contact')} className={styles.navButtonClass}>
+                            Contact Us
+                        </button>
                     </div>
                 </span>
             </div>

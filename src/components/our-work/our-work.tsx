@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 import styles from './our-work.module.scss';
 import { WorkCard1 } from '../work-card-1/work-card-1';
@@ -17,36 +18,72 @@ export interface OurWorkProps {
  */
 
 export const OurWork = ({ className }: OurWorkProps) => {
+    const sectionRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '50px',
+            }
+        );
+
+        const elements = sectionRef.current?.querySelectorAll('[data-parallax]');
+        elements?.forEach((el) => observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
+
+    const services = [
+        'Web Design',
+        'Social Media Marketing',
+        'Tech',
+        'Content Creation',
+        'Consulting'
+    ];
+
     return (
-        <div className={classNames(styles.root, className)}>
-            
+        <div className={classNames(styles.root, className)} ref={sectionRef}>
             <div className={styles.mainDivOurWork}>
-                <div className={styles.divOW}>
-                <Slide bottom cascade>
+                <div className={styles.divOW} data-parallax>
                     <h1 className={styles.h1OurWork}>
-                        Web Design / Social Media Marketing / Tech / Content Creation / Consulting
+                        {services.map((service, index) => (
+                            <>
+                                <span key={service}>{service}</span>
+                                {index < services.length - 1 ? ' / ' : ''}
+                            </>
+                        ))}
                     </h1>
-                    </Slide>
                 </div>
+                
                 <div>
                     <span className={styles.spanClassOurWork}>
-                        <div className={styles.cardSpaceTwo}>
+                        <div data-parallax>
                             <WorkCardTwo />
                         </div>
-                        <div>
+                        <div data-parallax>
                             <WorkCard1 />
                         </div>
                     </span>
                 </div>
-                <div className={styles.divThree}>
+
+                <div className={styles.divThree} data-parallax>
                     <WorkCardThree />
                 </div>
+
                 <div className={styles.divTwo}>
                     <span className={styles.spanClassOurWorkTwo}>
-                        <div>
+                        <div data-parallax>
                             <WorkCardFour />
                         </div>
-                        <div>
+                        <div data-parallax>
                             <WorkCardFive />
                         </div>
                     </span>

@@ -1,16 +1,157 @@
 .root {
-  padding: 3em 0em;
+  background-color: #242424;
+  padding: 3em 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .imgStyle {
   width: 14em;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+  }
 }
+
 .spanFooter {
-  display: grid;
-  grid-auto-flow: column;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2em;
 }
+
+.footerMiddle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9em;
+  margin: 0;
+}
+
+.accessibilityBtn {
+  background: none;
+  border: none;
+  color: #F9C307;
+  cursor: pointer;
+  font-size: 0.9em;
+  padding: 0;
+  text-decoration: underline;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1em;
+}
+
+.iconLink {
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #F9C307;
+  }
+}
+
 .icon {
-  width: 48px;
-  height: 48px;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #242424;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 2em;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  color: #ffffff;
+
+  h2 {
+    color: #F9C307;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    color: #F9C307;
+    margin: 1.5em 0 1em;
+  }
+
+  p {
+    line-height: 1.6;
+    margin: 1em 0;
+  }
+
+  ul {
+    padding-left: 1.5em;
+    margin: 1em 0;
+
+    li {
+      margin: 0.5em 0;
+    }
+  }
+
+  a {
+    color: #F9C307;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #F9C307;
+  }
+}
+
+.modalContent {
+  margin-top: 1em;
 }

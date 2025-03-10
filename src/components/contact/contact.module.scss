@@ -1,5 +1,5 @@
 .root {
-  background-color: #ffffff;
+  background-color: #242424;
   overflow: auto;
   flex-wrap: wrap;
   align-items: center;
@@ -9,29 +9,41 @@
   padding-bottom: 2.5em;
 }
 .divContact {
-  display: inline-block;
-  width: 50em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4em 2em;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .h3Contact {
-  color: #000000;
-  text-align: center;
-  padding-top: 1em;
-  font-size: 3em;
-  text-align: left;
+  color: #F9C307;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 .h1Contact {
-  color: #000000;
-  text-align: left;
   font-size: 2em;
-  padding-bottom: 0.3em;
-  width: 20em;
+  margin-bottom: 2em;
+  color: #ffffff;
 }
 .divMainText {
 }
 .divButton {
-  display: flex;
-  text-align: center;
-  padding-top: 0.6em;
+  background: transparent;
+  border: 2px solid #F9C307;
+  color: #F9C307;
+  padding: 1em 2em;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  margin-top: 1em;
+
+  &:hover {
+    background: #F9C307;
+    color: #242424;
+  }
 }
 .divH3 {
   text-align: start;
@@ -39,4 +51,56 @@
 
 .email {
   color:#000000;
+}
+
+.contactForm {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.formGroup {
+  width: 100%;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  font-size: 1em;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #F9C307;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2em;
+  
+  h2 {
+    color: #F9C307;
+    margin-bottom: 1em;
+  }
+  
+  p {
+    color: #ffffff;
+  }
 }

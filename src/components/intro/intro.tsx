@@ -11,20 +11,41 @@ export interface IntroProps {
  * To create custom component templates, see https://help.codux.com/kb/en/article/kb16522
  */
 export const Intro = ({ className }: IntroProps) => {
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <div className={classNames(styles.root, className)}>
             <div className={styles.divOuterSpace}>
                 <div className={styles.divIntro}>
-                    <img src={pngTwo} alt="" className={styles.imgIntoClass} />
+                    <img src={pngTwo} alt="Optionality Business Solutions" className={styles.imgIntoClass} />
                     <h1 className={styles.h1MainIntroClass}>
-                        Flexible Business Services &amp; Technology Solutions
+                        Innovative Business Solutions & Technology Services
                     </h1>
                     <h2 className={styles.h2SubtextInto}>
-                        We are full-time college students supported by a network of experienced
-                        freelance business professionals. Supporting the local business communities
-                        of San Dimas, Glendora, La Verne and Covina.
+                        Empowering businesses with cutting-edge technology solutions and strategic consulting services. 
+                        Serving the vibrant business communities of San Dimas, Glendora, La Verne, and Covina with 
+                        expertise in web development, digital marketing, and business optimization.
                     </h2>
-                    <button className={styles.buttonIntroClass}>Contact Us</button>
+                    <div className={styles.ctaContainer}>
+                        <button onClick={() => scrollToSection('contact')} className={styles.buttonIntroClass}>
+                            Get Started
+                        </button>
+                        <button onClick={() => scrollToSection('services')} className={styles.buttonSecondary}>
+                            Our Services
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

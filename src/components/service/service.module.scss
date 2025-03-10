@@ -1,48 +1,102 @@
 .root {
+  transition: all 0.3s ease;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 1em;
+
+  &:hover {
+    border-bottom-color: #F9C307;
+
+    .divText {
+      h1, h2 {
+        color: #F9C307;
+      }
+    }
+  }
 }
+
 .spanService {
   display: flex;
-  justify-content: center;
-  columns: 2;
+  justify-content: space-between;
+  width: 100%;
+  transition: all 0.3s ease;
+  padding-bottom: 0.8em;
 }
+
 .divService {
-  
+  width: 100%;
 }
+
 .button {
   margin: 0em 1em 0em 0em;
 }
+
 .divText {
   display: flex;
-  margin-left: 1em;
+  margin-left: 0.5em;
+  gap: 0.8em;
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+    transition: color 0.3s ease;
+  }
 }
+
 .divButton {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
-
 }
 
 .dropdown {
   display: flex;
-  columns: 2;
+  width: 100%;
+  padding: 0.8em 1em 1.5em;
+  gap: 3em;
+  align-items: flex-start;
 }
 
 .ul {
-  font-size: 1.2em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.1em;
   text-align: left;
+  flex: 1;
+
+  li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 0.8em;
+    line-height: 1.5;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #F9C307;
+    }
+  }
 }
 
 .desc {
-  font-size: 1.2em;
-  width: 18em;
- 
+  font-size: 1.1em;
+  flex: 1;
+  line-height: 1.5;
+  margin: 0;
+  padding-top: 0;
 }
 
 .divDesc {
   display: flex;
   justify-content: left;
-  
-  margin-left: auto;
   text-align: left;
+  flex: 1;
+  padding-top: 0;
 }

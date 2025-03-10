@@ -39,7 +39,6 @@ export const Service = ({ className, id, title, description, bulletOne, bulletTh
 
             {isDropdownOpen && (
                 <div className="dropdown-content">
-                    {/* Dropdown content goes here */}
                     <span className={styles.dropdown}>
                         <div>
                         <ul className={styles.ul}>
@@ -52,10 +51,8 @@ export const Service = ({ className, id, title, description, bulletOne, bulletTh
                         <p className ={styles.desc}>{description}</p>
                         </div>
                     </span>
-                   
                 </div>
             )}
-            <hr className={styles.spanService}></hr>
         </div>
     );
 };

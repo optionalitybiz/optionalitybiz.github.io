@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Helmet } from 'react-helmet-async';
 import styles from './Home.module.scss';
 import { Intro } from '../components/intro/intro';
 import { Spacer } from '../components/spacer/spacer';
@@ -9,12 +7,8 @@ import { SpacerBlack } from '../components/spacer-black/spacer-black';
 import { MainStatement } from '../components/main-statement/main-statement';
 import { Services } from '../components/services/services';
 import { Contact } from '../components/contact/contact';
-import { Footer } from '../components/footer/footer';
-
 
 function Home() {
-    const [count, setCount] = useState(0);
-
     const services = [
         {
             id: 1,
@@ -66,18 +60,73 @@ function Home() {
         },
     ];
 
+    // Schema markup for LocalBusiness
+    const schemaMarkup = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Optionality Business Solutions",
+        "description": "Premium web design, social media marketing, technology services, content creation, and business consulting in Southern California.",
+        "url": "https://optionality.biz",
+        "email": "contact@optionality.biz",
+        "areaServed": "Southern California",
+        "serviceType": ["Web Design", "Social Media Marketing", "Technology Services", "Content Creation", "Business Consulting"],
+    };
+
     return (
-        <div className={styles.App}>
-            <div />          
-            <Intro />
-            <SpacerBlack />
-            <MainStatement />
-            <Spacer />
-            <OurWork />
-            <Services services={services} />
-            <Contact />
-            <Footer />
-        </div>
+        <>
+            <Helmet>
+                <title>Optionality Business Solutions | Web Design & Digital Marketing Services</title>
+                <meta name="description" content="Transform your business with our premium web design, social media marketing, and technology services. Southern California's trusted partner for digital success." />
+                <meta name="keywords" content="web design, social media marketing, business consulting, technology services, Southern California, digital marketing, content creation" />
+                
+                {/* Open Graph / Social Media Meta Tags */}
+                <meta property="og:title" content="Optionality Business Solutions | Web Design & Digital Marketing Services" />
+                <meta property="og:description" content="Transform your business with our premium web design, social media marketing, and technology services. Southern California's trusted partner for digital success." />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://optionality.biz" />
+                
+                {/* Twitter Card Meta Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Optionality Business Solutions | Digital Services" />
+                <meta name="twitter:description" content="Premium web design, social media marketing, and technology services in Southern California." />
+                
+                {/* Additional SEO Meta Tags */}
+                <meta name="robots" content="index, follow" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <link rel="canonical" href="https://optionality.biz" />
+                
+                {/* Schema.org JSON-LD */}
+                <script type="application/ld+json">
+                    {JSON.stringify(schemaMarkup)}
+                </script>
+            </Helmet>
+
+            <article className={styles.App}>
+                <header>
+                    <Intro />
+                </header>
+                
+                <SpacerBlack />
+                
+                <section id="about">
+                    <MainStatement />
+                </section>
+                
+                <Spacer />
+                
+                <section id="our-work" aria-label="Our Work">
+                    <OurWork />
+                </section>
+                
+                <section id="services" aria-label="Our Services">
+                    <Services services={services} />
+                </section>
+                
+                <section id="contact" aria-label="Contact Us">
+                    <Contact />
+                </section>
+            </article>
+        </>
     );
 }
 
