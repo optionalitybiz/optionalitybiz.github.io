@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './work-card-five.module.scss';
 import png from '../../assets/rebounder.png';
 
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 export interface WorkCardFiveProps {
     className?: string;
@@ -15,7 +15,7 @@ export interface WorkCardFiveProps {
 export const WorkCardFive = ({ className }: WorkCardFiveProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-             <Fade bottom>
+             <Fade direction="down">
             <div className={styles.divCardFive}>
                 <img src={png} alt="" className={styles.imgCardFive} />
                 <h3 className={styles.h3CardFive}>Content Creation</h3>

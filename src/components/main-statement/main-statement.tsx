@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import styles from './main-statement.module.scss';
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 export interface MainStatementProps {
     className?: string;
@@ -26,9 +26,8 @@ export const MainStatement = ({ className }: MainStatementProps) => {
                 {words.map((word, index) => (
                     <Fade
                         key={index}
-                        bottom
+                        direction="down"
                         delay={index * 50}
-                        distance="20px"
                     >
                         <p className={styles.pStatement}>{word}</p>
                     </Fade>

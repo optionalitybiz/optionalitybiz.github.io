@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './work-card-two.module.scss';
 import png from '../../assets/ssCase.png';
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 export interface WorkCardTwoProps {
     className?: string;
@@ -14,7 +14,7 @@ export interface WorkCardTwoProps {
 export const WorkCardTwo = ({ className }: WorkCardTwoProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <Fade bottom>
+            <Fade direction="down">
             <div className={styles.divCardTwo}>
           
                 <img src={png} alt="" className={styles.imgCardTwo} />

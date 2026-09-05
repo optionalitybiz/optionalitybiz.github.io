@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import styles from './services.module.scss';
 import { Service, service } from '../service/service';
 
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 export interface ServicesProps {
     className?: string;
@@ -15,7 +15,7 @@ export const Services = ({ className, services }: ServicesProps) => {
         <div className={classNames(styles.root, className)}>
            
             <div className={styles.divMain}>
-            <Fade left>
+            <Fade direction="left">
                 <h3 className={styles.h3Services}>Products And Services</h3>
                 <p className={styles.h2Services}>
                     Our clients include, local restaurants, online retailers, fitness brands and
@@ -25,7 +25,7 @@ export const Services = ({ className, services }: ServicesProps) => {
             </div>
             {services.map((service) => (
                 <div>
-                    <Fade left>
+                    <Fade direction="left">
                     <Service 
                         key={service.id}
                         id={service.id}

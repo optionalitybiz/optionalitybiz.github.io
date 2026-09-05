@@ -6,7 +6,6 @@ import { WorkCardTwo } from '../work-card-two/work-card-two';
 import { WorkCardThree } from '../work-card-three/work-card-three';
 import { WorkCardFour } from '../work-card-four/work-card-four';
 import { WorkCardFive } from '../work-card-five/work-card-five';
-import Slide from 'react-reveal/Slide';
 
 export interface OurWorkProps {
     className?: string;

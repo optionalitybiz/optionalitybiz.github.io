@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './work-card-three.module.scss';
 import png from '../../assets/cardThree.png';
-import Fade from 'react-reveal/Fade';
+import { Fade } from 'react-awesome-reveal';
 
 export interface WorkCardThreeProps {
     className?: string;
@@ -14,7 +14,7 @@ export interface WorkCardThreeProps {
 export const WorkCardThree = ({ className }: WorkCardThreeProps) => {
     return (
         <div className={classNames(styles.root, className)}>
-            <Fade bottom>
+            <Fade direction="down">
             <div className={styles.divCardThree}>
                 <img src={png} alt="" className={styles.imgCardThree} />
                 <h2 className={styles.h2CardThree}>Design</h2>

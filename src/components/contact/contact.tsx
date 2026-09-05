@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './contact.module.scss';
 import React, { useState } from 'react';
-import Reveal from 'react-reveal';
+import { Fade } from 'react-awesome-reveal';
 
 export interface ContactProps {
     className?: string;
@@ -41,7 +41,7 @@ export const Contact = ({ className }: ContactProps) => {
 
     return (
         <div className={classNames(styles.root, className)}>
-            <Reveal effect="fadeInUp">
+            <Fade direction="up">
                 <div className={styles.divContact}>
                     <h3 className={styles.h3Contact}>Partner With Us!</h3>
                     <h1 className={styles.h1Contact}>We would love to see your business succeed. Let us suit your Businesses needs.</h1>
@@ -98,7 +98,7 @@ export const Contact = ({ className }: ContactProps) => {
                         </div>
                     )}
                 </div>
-            </Reveal>
+            </Fade>
         </div>
     );
 };
